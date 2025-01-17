@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->enum('jeniskelamin',['cowo','cewe']);
-            $table->integer('notelepon');
+            $table->bigInteger('notelepon');
             $table->timestamps();
         });
     }

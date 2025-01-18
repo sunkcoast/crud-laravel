@@ -9,6 +9,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    <!-- Sweet Alert Notifikasi -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Jquery CDN -->
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+    crossorigin="anonymous"></script>
+
     <title>CRUD LARAVEL</title>
 </head>
 <body>
@@ -52,7 +61,7 @@
                         <td>
                             
                             <a href="/tampilkandata/{{ $row->id }}" class="btn btn-info">Edit</a>
-                            <a href="/delete/{{ $row->id }}" class="btn btn-danger">Delete</button>
+                            <a href="#" class="btn btn-danger delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}">Delete</button>
 
                         </td>
                       </tr>
@@ -65,4 +74,32 @@
 
 
 </body>
+<script>
+
+  // Untuk Notifikasi Sweet Alert //
+  $('.delete').click( function(){
+    var pegawaiid = $(this).attr('data-id');
+    var nama = $(this).attr('data-nama');
+
+    swal({
+  title: "Yakin?",
+  text: "Kamu akan menghapus data pegawai "+nama+" ",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    window.location = "/delete/"+pegawaiid+""
+    swal("Data Berhasil Dihapus", {
+      icon: "success",
+    });
+  } else {
+    swal("Data Batal Dihapus");
+  }
+});
+  });
+
+
+</script>
 </html>

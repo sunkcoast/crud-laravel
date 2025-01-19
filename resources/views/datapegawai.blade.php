@@ -13,10 +13,16 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- Jquery CDN -->
-    <script
-    src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- Toastr CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>CRUD LARAVEL</title>
 </head>
@@ -26,11 +32,11 @@
         <div class="container">
             <a href="/tambahpegawai" class="btn btn-success">Tambah Data [+]</a>
             <div class="row"> 
-                @if ($message = Session::get('success'))
-                 <div class="alert alert-success" role="alert">
-                    {{ $message }}
-                 </div>
-                 @endif
+             {{-- @if ($message = Session::get('success'))
+                <div class="alert alert-success" role="alert">
+                  {{ $message }}
+                </div>
+                @endif --}}
                 <table class="table">
                     <thead>
                       <tr>
@@ -74,8 +80,9 @@
 
 
 </body>
-<script>
 
+<script>
+  
   // Untuk Notifikasi Sweet Alert //
   $('.delete').click( function(){
     var pegawaiid = $(this).attr('data-id');
@@ -100,6 +107,14 @@
 });
   });
 
+</script>
+
+<script>
+
+  @if (Session::has('success'))
+    toastr.success("{{ Session::get('success') }}")
+  @endif
 
 </script>
+
 </html>

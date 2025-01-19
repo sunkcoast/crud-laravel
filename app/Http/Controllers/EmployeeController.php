@@ -43,7 +43,7 @@ class EmployeeController extends Controller
     public function delete ($id){
         $data = Employee::find($id);
         $data->delete();
-        return redirect()->route('pegawai')->with('success', 'Data Berhasil Dihapus'); 
+        return redirect()->route('pegawai')->with('notifdelete', 'Data Berhasil Dihapus'); 
     }
     
 }

@@ -14,7 +14,7 @@
 
     <!-- Jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <!-- Toastr CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" 
@@ -31,12 +31,22 @@
 
         <div class="container">
             <a href="/tambahpegawai" class="btn btn-success">Tambah Data [+]</a>
+            
+            <div class="row g-3 align-items-center mt-2">
+                <div class="col-auto">
+                  <form action="/pegawai" method="GET">
+                    <input type="search" id="inputPassword6" placeholder="Cari Data" name="search" class="form-control" aria-describedby="passwordHelpInline">
+                  </form>
+                  </div>
+            </div>
+
+
             <div class="row"> 
              {{-- @if ($message = Session::get('success'))
                 <div class="alert alert-success" role="alert">
                   {{ $message }}
                 </div>
-                @endif --}}
+             @endif --}}
                 <table class="table">
                     <thead>
                       <tr>
@@ -54,9 +64,9 @@
                     @php 
                       $no = 1;
                     @endphp
-                    @foreach ($data as $row)
+                    @foreach ($data as $index => $row)
                     <tr>
-                        <th scope="row">{{ $no++ }}</th>
+                        <th scope="row">{{ $index + $data->firstItem() }}</th>
                         <td>{{ $row->nama }}</td>
                         <td>
                           <img src="{{ asset('fotopegawai/'.$row->foto) }}" alt="" style="width: 40px;">
@@ -75,6 +85,7 @@
  
                     </tbody>
                   </table>
+                  {{ $data->links() }}
             </div>
         </div>
 

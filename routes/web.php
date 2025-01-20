@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\SessionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +33,6 @@ Route::post('/updatedata/{id}',[EmployeeController::class, 'updatedata'])->name(
 
 Route::get('/delete/{id}',[EmployeeController::class, 'delete'])->name('delete');
 
+Route::get('/sesi', [SessionController::class, 'index']);
+
+Route::post('/sesi/login', [SessionController::class, 'login']);

@@ -33,6 +33,8 @@ Route::post('/updatedata/{id}',[EmployeeController::class, 'updatedata'])->name(
 
 Route::get('/delete/{id}',[EmployeeController::class, 'delete'])->name('delete');
 
-Route::get('/sesi', [SessionController::class, 'index']);
+Route::get('/sesi', [SessionController::class, 'index'])->name('sesi');
 
-Route::post('/sesi/login', [SessionController::class, 'login']);
+Route::post('/sesi/login', [SessionController::class, 'login'])->name('login');
+
+Route::get('/sesi/logout', [SessionController::class, 'logout'])->name('logout');

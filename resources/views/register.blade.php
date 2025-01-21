@@ -9,10 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <title>Login</title>
+    <title>Register</title>
 </head>
 <body>
-    <h1 class="text-center mb-4">Login</h1>
+    <h1 class="text-center mb-4">Register</h1>
 
     <div class="container">
         <div class="row justify-content-center">
@@ -29,7 +29,7 @@
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" name="password" id="password" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                            <button type="submit" class="btn btn-primary w-100">Daftar</button>
                         </form>
                         
                         @if ($errors->any())
@@ -40,7 +40,6 @@
                             </div>
                         @endif
                     </div>
-                    <a href="/register" type="submit" class="text-center mb-4">Register</button>
                 </div>
             </div>
         </div>

@@ -19,8 +19,12 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('login') }}" method="POST">
+                        <form action="/registeruser" method="POST">
                             @csrf
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Nama</label>
+                                <input type="text" name="nama" id="email" class="form-control" required>
+                            </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" name="email" id="email" class="form-control" required>

@@ -34,6 +34,16 @@ Route::post('/updatedata/{id}',[EmployeeController::class, 'updatedata'])->name(
 Route::get('/delete/{id}',[EmployeeController::class, 'delete'])->name('delete');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/loginprocess', [LoginController::class, 'loginprocess'])->name('loginprocess');
 
 Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+
+
+
+
 

@@ -1,8 +1,13 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
+use App\Models\User; 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -10,7 +15,37 @@ class LoginController extends Controller
         return view('login');
     }
 
+    public function loginprocess(Request $request){
+        if (Auth::attempt($request->only('email', 'password'))){
+            return redirect('/pegawai');
+        } 
+        
+        return \redirect('login');
+    }
+
     public function register(){
         return view('register');
     }
+
+    public function registeruser(Request $request){
+    // dd($request->all());
+        User::create([
+            'name' => $request->nama,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'remember_token' => Str::random(60),
+        ]);
+        
+        return \redirect('/login');
+    
+    }
+
+    public function logout(Request $request){
+    Auth::logout();
+
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect('/login');
+}
 }

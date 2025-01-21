@@ -87,6 +87,11 @@
                   </table>
                   {{ $data->links() }}
             </div>
+            <form action="{{ route('logout') }}" method="POST">
+               @csrf
+                <button type="submit" class="btn btn-warning">Logout</button>
+            </form>
+
         </div>
 
 

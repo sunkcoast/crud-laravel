@@ -17,11 +17,24 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('register');
 });
 
+    // Route yang bisa diakses users 
 
-Route::get('/pegawai',[EmployeeController::class, 'index'])->name('pegawai');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/loginprocess', [LoginController::class, 'loginprocess'])->name('loginprocess');
+
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');
+
+
+
+Route::group(['middleware' => ['auth', 'hakakses:admin']], function(){
+
+    // Routes yang hanya bisa diakses admin
+
+Route::get('/pegawai',[EmployeeController::class, 'index'])->name('pegawai')->middleware('auth');
 
 Route::get('/tambahpegawai',[EmployeeController::class, 'tambahpegawai'])->name('tambahpegawai');
 
@@ -33,13 +46,13 @@ Route::post('/updatedata/{id}',[EmployeeController::class, 'updatedata'])->name(
 
 Route::get('/delete/{id}',[EmployeeController::class, 'delete'])->name('delete');
 
-Route::get('/login', [LoginController::class, 'login'])->name('login');
-Route::post('/loginprocess', [LoginController::class, 'loginprocess'])->name('loginprocess');
-
-Route::get('/register', [LoginController::class, 'register'])->name('register');
-Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');
-
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+    
+
+});
+
+
 
 
 

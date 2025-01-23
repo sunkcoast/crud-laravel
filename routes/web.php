@@ -17,7 +17,7 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('register');
+    return view('login');
 });
 
     // Route yang bisa diakses users 
@@ -27,7 +27,6 @@ Route::post('/loginprocess', [LoginController::class, 'loginprocess'])->name('lo
 
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');
-
 
 
 Route::group(['middleware' => ['auth', 'hakakses:admin']], function(){

@@ -11,36 +11,54 @@
 
     <title>Register</title>
 </head>
-<body>
-    <h1 class="text-center mb-4">Register</h1>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="/">CRUD Laravel</a>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="container">
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Register</h1>
+
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="card">
+                <div class="card shadow-sm">
                     <div class="card-body">
                         <form action="/registeruser" method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label for="email" class="form-label">Nama</label>
-                                <input type="text" name="nama" id="email" class="form-control" required>
+                                <label for="nama" class="form-label">Nama</label>
+                                <input type="text" name="nama" id="nama" class="form-control" placeholder="Enter your name" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" name="email" id="email" class="form-control" required>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" name="password" id="password" class="form-control" required>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Create a password" required>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Daftar</button>
+                            <button type="submit" class="btn btn-primary w-100">Register</button>
                         </form>
-                        
+
                         @if ($errors->any())
-                            <div class="mt-3">
-                                @foreach ($errors->all() as $error)
-                                    <p class="text-danger">{{ $error }}</p>
-                                @endforeach
+                            <div class="alert alert-danger mt-3">
+                                <ul class="mb-0">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
                         @endif
                     </div>
@@ -48,6 +66,13 @@
             </div>
         </div>
     </div>
+
+
+    <footer class="bg-light mt-auto py-3">
+        <div class="container text-center">
+            <small>&copy; 2025 Ini Copyright.</small>
+        </div>
+    </footer>
 
 </body>
 </html>

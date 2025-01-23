@@ -16,9 +16,6 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="/">CRUD Laravel</a>
-            <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -74,7 +71,7 @@
 
     <footer class="bg-light mt-auto py-3">
         <div class="container text-center">
-            <small>&copy; 2025 Ini Copyright.</small>
+            <small>© 2025 Ini Copyright.</small>
         </div>
     </footer>
 

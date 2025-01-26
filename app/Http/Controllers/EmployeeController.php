@@ -27,14 +27,15 @@ class EmployeeController extends Controller
         // dd($request->all());
         $data = Employee::create($request->all());
         if($request->hasFile('foto')){
-            $request->file('foto')->move('fotopegawai/', $request->file('foto')->getClientOriginalName());
-            $data->foto = $request->file('foto')->getClientOriginalName();
+            $uniqueFileName = time() . '_' . $request->file('foto')->getClientOriginalName();
+            $filePath = $request->file('foto')->storeAs('fotopegawai', $uniqueFileName, 'public');
+            $data->foto = $filePath; 
             $data->save();
         }
         return redirect()->route('pegawai')->with('success', 'Data Berhasil Ditambah'); 
     }
 
-    public function tampilkandata ($id) {
+    public function tampilkandata ($id) {   
         $data = Employee::find($id);
         // dd($data);
         return view('tampildata', compact('data'));

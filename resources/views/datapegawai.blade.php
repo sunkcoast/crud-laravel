@@ -83,7 +83,7 @@
                             <td>{{ $index + $data->firstItem() }}</td>
                             <td>{{ $row->nama }}</td>
                             <td>
-                                <img src="{{ asset('fotopegawai/' . $row->foto) }}" alt="Foto" style="width: 50px; height: 50px; object-fit: cover;">
+                                <img src="{{ asset('storage/' . $row->foto) }}" alt="Foto" style="width: 50px; height: 50px; object-fit: cover;">
                             </td>
                             <td>{{ $row->jeniskelamin }}</td>
                             <td>0{{ $row->notelepon }}</td>

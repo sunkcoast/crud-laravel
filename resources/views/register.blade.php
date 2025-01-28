@@ -28,6 +28,12 @@
     <div class="container my-5">
         <h1 class="text-center mb-4">Register</h1>
 
+        @if (Session::has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ Session::get('success') }}
+            </div>
+        @endif
+
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card shadow-sm">

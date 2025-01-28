@@ -28,12 +28,11 @@ Route::post('/loginprocess', [LoginController::class, 'loginprocess'])->name('lo
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');
 
+Route::get('/pegawai',[EmployeeController::class, 'index'])->name('pegawai')->middleware('auth');
 
 Route::group(['middleware' => ['auth', 'hakakses:admin']], function(){
 
     // Routes yang hanya bisa diakses admin
-
-Route::get('/pegawai',[EmployeeController::class, 'index'])->name('pegawai')->middleware('auth');
 
 Route::get('/tambahpegawai',[EmployeeController::class, 'tambahpegawai'])->name('tambahpegawai');
 

@@ -53,11 +53,6 @@
                                 <label for="notelepon" class="form-label">No Telepon</label>
                                 <input type="number" name="notelepon" class="form-control" id="notelepon" value="{{ $data->notelepon }}" required>
                             </div>
-                            <div class="mb-3">
-                                <label for="foto" class="form-label">Masukkan Foto</label>
-                                <input type="file" name="foto" class="form-control" id="foto">
-                                <small class="text-muted">Kosongkan jika tidak ingin mengubah foto</small>
-                            </div>
                             <button type="submit" class="btn btn-success w-100">Update</button>
                         </form>
                     </div>

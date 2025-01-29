@@ -16,6 +16,11 @@ http://localhost:8000/
     <body>
       <div class="container">
         <ul> 
+        <li> 
+          <h4>Database MySql</h4>
+<a href="https://github.com/user-attachments/assets/bd08dffd-0c71-47ff-b7cb-49fdccb55b53">Data Employee</a><br><br>
+<a href="https://github.com/user-attachments/assets/90e3b7a5-e03b-4a81-b65c-066c606e0c4b">Data User</a>
+          </li>
            <li> 
           <h4>Halaman Login</h4>
 <a href="https://github.com/user-attachments/assets/cc9ae1ac-12ed-498e-9c4c-3aa636dfeb88">Login</a> ->
@@ -32,11 +37,12 @@ http://localhost:8000/
           </li>
          <li> 
           <h4>Dashboard Menu</h4>
+<a href="https://github.com/user-attachments/assets/5510ae54-ac4c-4074-b314-7dd3f92cb6af">Search Data</a><br><br>
 <a href="https://github.com/user-attachments/assets/7d69543d-a430-420f-88ba-2519c93ed2ae">Input Data</a> ->
 <a href="https://github.com/user-attachments/assets/f1994099-2c96-40c1-9373-a5dd6ab96073">Notifikasi</a><br><br>
 <a href="https://github.com/user-attachments/assets/1d5039eb-f3b1-4a13-8269-51e21d613d63">Edit Data</a> ->
 <a href="https://github.com/user-attachments/assets/34dc7010-d00c-44b5-bda2-ccd1bbe947c1">Notifikasi</a><br><br>
 <a href="https://github.com/user-attachments/assets/3e4a280f-3e13-4e30-a7eb-65b2a7cb8b50">Delete</a> ->
 <a href="https://github.com/user-attachments/assets/ef29a2f4-41fc-4538-a9fc-ccbf87e677d1">Notifikasi</a><br><br>
-<a href="https://github.com/user-attachments/assets/5510ae54-ac4c-4074-b314-7dd3f92cb6af">Search Data</a>
+
 </html>

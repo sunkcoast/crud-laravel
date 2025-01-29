@@ -38,5 +38,5 @@ http://localhost:8000/
 <a href="https://github.com/user-attachments/assets/34dc7010-d00c-44b5-bda2-ccd1bbe947c1">Notifikasi</a><br><br>
 <a href="https://github.com/user-attachments/assets/3e4a280f-3e13-4e30-a7eb-65b2a7cb8b50">Delete</a> ->
 <a href="https://github.com/user-attachments/assets/ef29a2f4-41fc-4538-a9fc-ccbf87e677d1">Notifikasi</a><br><br>
-<a href="https://github.com/user-attachments/assets/5510ae54-ac4c-4074-b314-7dd3f92cb6af">Search</a>
+<a href="https://github.com/user-attachments/assets/5510ae54-ac4c-4074-b314-7dd3f92cb6af">Search Data</a>
 </html>

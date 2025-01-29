@@ -20,7 +20,7 @@ class LoginController extends Controller
             return redirect('/pegawai');
         } 
         
-        return \redirect('login');
+        return back()->withErrors(['email' => 'Username belum terdaftar atau password salah.'])->withInput();
     }
 
     public function register(){
@@ -29,6 +29,9 @@ class LoginController extends Controller
 
     public function registeruser(Request $request){
     // dd($request->all());
+    if (User::where('email', $request->email)->exists()) {
+        return back()->withErrors(['email' => 'Email sudah terdaftar, silahkan login'])->withInput();
+    }
         User::create([
             'name' => $request->nama,
             'email' => $request->email,

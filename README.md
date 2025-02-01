@@ -1,66 +1,48 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Website CRUD Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+http://localhost:8000/
 
-## About Laravel
+![Struktur](https://github.com/user-attachments/assets/fb7b23d1-f7f1-461d-bdeb-6e19e4123696)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<h1>Progress Coding</h1>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+      <div class="container">
+        <ul> 
+        <li> 
+          <h4>Database MySql</h4>
+<a href="https://github.com/user-attachments/assets/bd08dffd-0c71-47ff-b7cb-49fdccb55b53">Data Employee</a><br><br>
+<a href="https://github.com/user-attachments/assets/90e3b7a5-e03b-4a81-b65c-066c606e0c4b">Data User</a>
+          </li>
+           <li> 
+          <h4>Halaman Login</h4>
+<a href="https://github.com/user-attachments/assets/cc9ae1ac-12ed-498e-9c4c-3aa636dfeb88">Login</a> ->
+<a href="https://github.com/user-attachments/assets/7f0a4d4f-76a7-4582-99f3-5c1378615742">Password Salah/Email tidak terdaftar</a>
+          </li>
+         <li>
+         <h4>Halaman Register</h4>
+<a href="https://github.com/user-attachments/assets/704e91a1-e5b3-42dc-92d1-b20600b951ff">Register</a> ->
+<a href="https://github.com/user-attachments/assets/869f780b-44ca-4605-ae57-b6e1305e2c02">Daftar Berhasil</a>
+          </li>
+         <li> 
+          <h4>Dashboard</h4>
+<a href="https://github.com/user-attachments/assets/3a8f0714-d3a8-4c5e-b849-18f9c0a192eb">Features and Tools</a>
+          </li>
+         <li> 
+          <h4>Dashboard Menu</h4>
+<a href="https://github.com/user-attachments/assets/5510ae54-ac4c-4074-b314-7dd3f92cb6af">Search Data</a><br><br>
+<a href="https://github.com/user-attachments/assets/7d69543d-a430-420f-88ba-2519c93ed2ae">Input Data</a> ->
+<a href="https://github.com/user-attachments/assets/f1994099-2c96-40c1-9373-a5dd6ab96073">Notifikasi</a><br><br>
+<a href="https://github.com/user-attachments/assets/1d5039eb-f3b1-4a13-8269-51e21d613d63">Edit Data</a> ->
+<a href="https://github.com/user-attachments/assets/34dc7010-d00c-44b5-bda2-ccd1bbe947c1">Notifikasi</a><br><br>
+<a href="https://github.com/user-attachments/assets/3e4a280f-3e13-4e30-a7eb-65b2a7cb8b50">Delete</a> ->
+<a href="https://github.com/user-attachments/assets/ef29a2f4-41fc-4538-a9fc-ccbf87e677d1">Notifikasi</a><br><br>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+</html>

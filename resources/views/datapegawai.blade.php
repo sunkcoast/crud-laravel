@@ -72,6 +72,7 @@
                         <th>Foto</th>
                         <th>Jenis Kelamin</th>
                         <th>No Telepon</th>
+                        <th>Cabang</th>
                         <th>Dibuat</th>
                         <th>Aksi</th>
                     </tr>
@@ -87,6 +88,7 @@
                             </td>
                             <td>{{ $row->jeniskelamin }}</td>
                             <td>0{{ $row->notelepon }}</td>
+                            <td>{{ $row->cabang->nama_cabang ?? '-'}}</td>
                             <td>{{ $row->created_at->format('D, M Y') }}</td>
                             <td>
                                 <a href="/tampilkandata/{{ $row->id }}" class="btn btn-info btn-sm">Edit</a>

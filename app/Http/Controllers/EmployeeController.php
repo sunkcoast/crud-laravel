@@ -36,7 +36,7 @@ class EmployeeController extends Controller
     }
 
     public function tampilkandata ($id) {   
-        $data = Employee::find($id);
+        $data = Employee::with('cabang')->find($id);
         // dd($data);
         return view('tampildata', compact('data'));
     }

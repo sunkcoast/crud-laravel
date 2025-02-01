@@ -12,4 +12,9 @@ class Employee extends Model
 
     protected $guarded = [];
     protected $dates = ['created_at'];
+
+    public function cabang()
+    {
+        return $this->hasOne(Cabang::class);
+    }
 }

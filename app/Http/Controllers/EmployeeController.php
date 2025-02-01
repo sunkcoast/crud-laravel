@@ -13,7 +13,7 @@ class EmployeeController extends Controller
         if($request->has('search')){
             $data = Employee::where('nama', 'LIKE', '%' .$request->search. '%')->paginate(3);
         } else {
-            $data = Employee::paginate(3);
+            $data = Employee::paginate(4);
         }
 
         return view ('datapegawai',compact('data'));
@@ -36,7 +36,7 @@ class EmployeeController extends Controller
     }
 
     public function tampilkandata ($id) {   
-        $data = Employee::with('cabang')->find($id);
+        $data = Employee::with('cabang', 'manager', 'skills')->find($id);
         // dd($data);
         return view('tampildata', compact('data'));
     }

@@ -45,7 +45,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container text-center">
         <h1 class="text-center mb-4">Data Pegawai</h1>
 
         <div class="mb-3 d-flex justify-content-between">
@@ -71,8 +71,10 @@
                         <th>Nama</th>
                         <th>Foto</th>
                         <th>Jenis Kelamin</th>
-                        <th>No Telepon</th>
+                        <th>No. Pemain</th>
                         <th>Cabang</th>
+                        <th>Manager</th>
+                        <th>Skill</th>
                         <th>Dibuat</th>
                         <th>Aksi</th>
                     </tr>
@@ -87,9 +89,19 @@
                                 <img src="{{ asset('storage/' . $row->foto) }}" alt="Foto" style="width: 50px; height: 50px; object-fit: cover;">
                             </td>
                             <td>{{ $row->jeniskelamin }}</td>
-                            <td>0{{ $row->notelepon }}</td>
+                            <td>{{ $row->notelepon }}</td>
                             <td>{{ $row->cabang->nama_cabang ?? '-'}}</td>
-                            <td>{{ $row->created_at->format('D, M Y') }}</td>
+                            <td>{{ $row->manager->nama_manager ?? '-'}}</td>
+                            <td>
+                                @if ($row->skills->isNotEmpty()) 
+                                    @foreach ($row->skills as $skill)
+                                        {{ $skill->nama_skill }} @if (!$loop->last), @endif
+                                    @endforeach
+                                @else
+                                    -
+                                @endif
+                            </td>
+                            <td>{{ $row->created_at->format('M Y') }}</td>
                             <td>
                                 <a href="/tampilkandata/{{ $row->id }}" class="btn btn-info btn-sm">Edit</a>
                                 <button class="btn btn-danger btn-sm delete" data-id="{{ $row->id }}" data-nama="{{ $row->nama }}">Delete</button>

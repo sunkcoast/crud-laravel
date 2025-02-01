@@ -17,4 +17,14 @@ class Employee extends Model
     {
         return $this->hasOne(Cabang::class);
     }
+    
+    public function manager()
+    {
+        return $this->belongsTo(Manager::class);
+    }
+
+    public function skills()
+    {
+        return $this->belongsToMany(Skill::class);
+    }
 }

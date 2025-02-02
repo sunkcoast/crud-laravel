@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\User;
+use App\Models\Cabang;
+use App\Models\Skill;
+use App\Models\Manager;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -20,7 +23,12 @@ class EmployeeController extends Controller
     }
 
     public function tambahpegawai(){
-        return view ('tambahdata');
+        $cabangs = Cabang::all();      
+        $managers = Manager::all();    
+        $skills = Skill::all();
+
+        return view('tambahdata', compact('cabangs', 'managers', 'skills'));
+
     }
 
     public function insertdata (Request $request){ 
@@ -36,9 +44,12 @@ class EmployeeController extends Controller
     }
 
     public function tampilkandata ($id) {   
-        $data = Employee::with('cabang', 'manager', 'skills')->find($id);
-        // dd($data);
-        return view('tampildata', compact('data'));
+        $data = Employee::findOrFail($id);
+        $cabangs = Cabang::all();
+        $managers = Manager::all();
+        $skills = Skill::all();
+
+        return view('tampildata', compact('data', 'cabangs', 'managers', 'skills'));
     }
 
     public function updatedata (Request $request, $id) {

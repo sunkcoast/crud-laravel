@@ -53,6 +53,36 @@
                                 <label for="notelepon" class="form-label">No Telepon</label>
                                 <input type="number" name="notelepon" class="form-control" id="notelepon" required>
                             </div>
+
+                            <div class="mb-3">
+                                <label for="cabang" class="form-label">Cabang Baru</label>
+                                <input type="text" name="cabang" class="form-control" id="cabang" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="manager_id" class="form-label">Pilih Manager</label>
+                                <select class="form-select" name="manager_id" id="manager_id" required>
+                                    <option value="" disabled selected>Pilih Manager</option>
+                                    @foreach ($managers as $manager)
+                                        <option value="{{ $manager->id }}">{{ $manager->nama_manager }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="skills" class="form-label">Pilih Skill</label>
+                                <div id="skills">
+                                    @foreach ($skills as $skill)
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="skills[]" value="{{ $skill->id }}">
+                                            <label class="form-check-label" for="skill_{{ $skill->id }}">
+                                                {{ $skill->nama_skill }}
+                                            </label>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+
                             <div class="mb-3">
                                 <label for="foto" class="form-label">Masukkan Foto</label>
                                 <input type="file" name="foto" class="form-control" id="foto" required>

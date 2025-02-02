@@ -28,38 +28,75 @@
     <h1 class="text-center mb-4">Edit Data Pegawai</h1>
 
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header bg-success text-white text-center">
-                        <h5>Form Edit Data</h5>
-                    </div>
-                    <div class="card-body">
-                        <form action="/updatedata/{{ $data->id }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="mb-3">
-                                <label for="nama" class="form-label">Nama Lengkap</label>
-                                <input type="text" name="nama" class="form-control" id="nama" value="{{ $data->nama }}" required>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-success text-white text-center">
+                    <h5>Form Edit Data</h5>
+                </div>
+                <div class="card-body">
+                    <form action="/updatedata/{{ $data->id }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama Lengkap</label>
+                            <input type="text" name="nama" class="form-control" id="nama" value="{{ $data->nama }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jeniskelamin" class="form-label">Jenis Kelamin</label>
+                            <select class="form-select" name="jeniskelamin" id="jeniskelamin" required>
+                                <option value="" disabled>Pilih Jenis Kelamin</option>
+                                <option value="cowo" {{ $data->jeniskelamin == 'cowo' ? 'selected' : '' }}>Cowo</option>
+                                <option value="cewe" {{ $data->jeniskelamin == 'cewe' ? 'selected' : '' }}>Cewe</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="notelepon" class="form-label">No Telepon</label>
+                            <input type="number" name="notelepon" class="form-control" id="notelepon" value="{{ $data->notelepon }}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cabang" class="form-label">Cabang</label>
+                            <input type="text" name="cabang" class="form-control" id="cabang" 
+                                value="{{ old('cabang', isset($data->cabang) ? $data->cabang->nama_cabang : '') }}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="manager_id" class="form-label">Pilih Manager</label>
+                            <select class="form-select" name="manager_id" id="manager_id" required>
+                                <option value="" disabled>Pilih Manager</option>
+                                @foreach ($managers as $manager)
+                                    <option value="{{ $manager->id }}" 
+                                        {{ $data->manager_id == $manager->id ? 'selected' : '' }}>
+                                        {{ $manager->nama_manager }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="skills" class="form-label">Pilih Skill</label>
+                            <div id="skills">
+                                @foreach ($skills as $skill)
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="skills[]" id="skill_{{ $skill->id }}" value="{{ $skill->id }}"
+                                            {{ in_array($skill->id, $data->skills->pluck('id')->toArray()) ? 'checked' : '' }}>
+                                        <label class="form-check-label" for="skill_{{ $skill->id }}">
+                                            {{ $skill->nama_skill }}
+                                        </label>
+                                    </div>
+                                @endforeach
                             </div>
-                            <div class="mb-3">
-                                <label for="jeniskelamin" class="form-label">Jenis Kelamin</label>
-                                <select class="form-select" name="jeniskelamin" id="jeniskelamin" required>
-                                    <option value="" disabled>Pilih Jenis Kelamin</option>
-                                    <option value="cowo" {{ $data->jeniskelamin == 'cowo' ? 'selected' : '' }}>Cowo</option>
-                                    <option value="cewe" {{ $data->jeniskelamin == 'cewe' ? 'selected' : '' }}>Cewe</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="notelepon" class="form-label">No Telepon</label>
-                                <input type="number" name="notelepon" class="form-control" id="notelepon" value="{{ $data->notelepon }}" required>
-                            </div>
-                            <button type="submit" class="btn btn-success w-100">Update</button>
-                        </form>
-                    </div>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-success w-100">Update</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
 
     <footer class="bg-light text-center text-lg-start mt-5">
         <div class="text-center p-3">

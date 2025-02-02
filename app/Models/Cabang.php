@@ -9,6 +9,9 @@ class Cabang extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nama_cabang', 
+    ];
 
     public function employee()
     {

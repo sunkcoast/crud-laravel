@@ -32,14 +32,30 @@ class EmployeeController extends Controller
     }
 
     public function insertdata (Request $request){ 
-        // dd($request->all());
-        $data = Employee::create($request->all());
+        //dd($request->all());
+        $data = Employee::create([
+            'nama' => $request->nama,
+            'jeniskelamin' => $request->jeniskelamin,
+            'notelepon' => $request->notelepon,
+            'manager_id' => $request->manager_id,
+            'foto' => 'None',
+        ]);
+
         if($request->hasFile('foto')){
             $uniqueFileName = time() . '_' . $request->file('foto')->getClientOriginalName();
             $filePath = $request->file('foto')->storeAs('fotopegawai', $uniqueFileName, 'public');
             $data->foto = $filePath; 
             $data->save();
         }
+
+        $data->skills()->sync($request->skills);
+
+        $cabang = new Cabang([
+            'nama_cabang' => $request->cabang,
+        ]);
+
+        $data->cabang()->save($cabang);
+
         return redirect()->route('pegawai')->with('success', 'Data Berhasil Ditambah'); 
     }
 
@@ -53,8 +69,28 @@ class EmployeeController extends Controller
     }
 
     public function updatedata (Request $request, $id) {
+        //dd($request->all());
         $data = Employee::find($id);
-        $data->update($request->all());
+        $data->update([
+            'nama' => $request->nama,
+            'jeniskelamin' => $request->jeniskelamin,
+            'notelepon' => $request->notelepon,
+            'manager_id' => $request->manager_id,
+        ]);
+
+        if ($data->cabang) {
+            $data->cabang->update([
+                'nama_cabang' => $request->cabang,
+            ]);
+        } else {
+            $cabang = new Cabang([
+                'nama_cabang' => $request->cabang,
+            ]);
+            $data->cabang()->save($cabang); 
+        }
+
+        $data->skills()->sync($request->skills);
+
         return redirect()->route('pegawai')->with('success', 'Data Berhasil Diubah'); 
     }
 
